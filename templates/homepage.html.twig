@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<!-- HEADER AND NAVIGATION SECTION -->
+
+	<header>
+		<!-- ADDING THE BOOTSTRAP NAVBAR WITH DROPDOWN FORMS FOR REGISTER & LOGIN-->
+        {% include "navbar.html.twig" %}
+	</header>
+
+	<!-- MAIN SECTION -->
+    <main class="container" id="home">
+        {% include 'main.html.twig' %}
+    </main>
+
+	<!-- FOOTER SECTION -->
+	{% include 'footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ post.getTitle() }}</h5>
+    <div class="card-text">
+    	<p>{{ post.getText() }}</p>
+    </div>
+    <a href="{{ path('post_details', {'post': post.getId()}) }}" class="card-link">Details</a>
+  </div>
+</div>

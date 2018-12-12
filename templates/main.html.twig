@@ -1,0 +1,58 @@
+<!-- MAIN INTRODUCTION CAROUSEL SLIDER SECTION -->
+{% include 'carousel.html.twig' %}
+
+<!-- MAIN INTRODUCTION JUMBOTRON SECTION -->
+{% include 'about.html.twig' %}
+
+<!--- MAIN NAVBAR WITH PAGINATION AND TOGGLE/SEARCH BUTTONS -->
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- <nav aria-label="Page navigation example"> -->
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link text-secondary" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-secondary" href="#">2</a></li>
+            <li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
+            <li class="page-item"><a class="page-link text-secondary" href="#">Next</a></li>
+        </ul>
+        <!-- </nav> -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Cards view <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">List view</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
+
+<!-- MAIN FIXED BACKGROUND IMAGE SECTION -->
+<figure>
+    <div class="fixed-wrap">
+        <div id="fixed">
+        </div>
+</figure>
+
+<!-- MAIN PETITION CREATION FORM SECTION -->
+{% include 'Post/Create.html.twig' %}
+
+<!-- MAIN CARDS (PETITIONS) -->
+<div class="container">
+{% include 'cards.html.twig' %}
+
+    <!-- INI modalPetitionView -->
+    {% include 'modalPetition.html.twig' %}
+
+    <!-- END modalPetitionView -->
+</div>
+
+<!-- MAIN MEET THE TEAM SECTION -->
+{% include 'team.html.twig' %}
+
+<!-- MAIN SOCIAL NETWORKS SECTION -->
+{% include 'social.html.twig' %}

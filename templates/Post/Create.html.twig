@@ -1,0 +1,57 @@
+<div class="container">
+	<form class="px-3 py-3 needs-validation" style="min-width: 500px;" novalidate>
+		<div class="form-group">
+			<label for="postTitle">Title</label>
+			<input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter your petition title"
+				   required>
+			<small id="postTitleHelp" class="form-text text-muted"></small>
+			<div class="valid-feedback">
+				Title provided is valid!
+			</div>
+			<div class="invalid-feedback">
+				Please provide a valid title!
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="postTags">Tags</label>
+			<input type="text" class="form-control" id="postTags" name="postTags" placeholder="Enter your petition title"
+				   required>
+			<small id="postTagsHelp" class="form-text text-muted"></small>
+			<div class="valid-feedback">
+				Tags provided are valid!
+			</div>
+			<div class="invalid-feedback">
+				Please provide valid tags!
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="postText">Text</label>
+			<input type="text" class="form-control" id="postText" name="postText" placeholder="Enter your petition text"
+				   required>
+			<small id="postTextHelp" class="form-text text-muted"></small>
+			<div class="valid-feedback">
+				Text provided is valid!
+			</div>
+			<div class="invalid-feedback">
+				Please provide a valid text!
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="postVotesMin">Number of votes required</label>
+			<input type="number" class="form-control" id="postVotesMin" name="postVotesMin" placeholder="Enter your petition title"
+				   required>
+			<small id="postVotesMinHelp" class="form-text text-muted"></small>
+			<div class="valid-feedback">
+				Votes minimum provided is valid!
+			</div>
+			<div class="invalid-feedback">
+				Please provide valid Votes minimum!
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Create Petition</button>
+	</form>
+</div>

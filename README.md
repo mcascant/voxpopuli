@@ -1,2 +1,2 @@
-# voxpopuli
-Final Fit4Coding project
+# Vox
+Simple repository for Cursus Final Project 

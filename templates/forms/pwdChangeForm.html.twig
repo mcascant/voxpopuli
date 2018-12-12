@@ -1,0 +1,23 @@
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="forgotPasswordDropdown" role="button" data-toggle="dropdown"
+       aria-haspopup="true" aria-expanded="false">
+        Forgot password
+    </a>
+    <div class="dropdown-menu" aria-labelledby="forgotPasswordDropdown">
+        <form class="px-3 py-3 needs-validation" style="min-width: 250px;" novalidate>
+            <div class="form-group">
+                <label for="signInEmail">Email address</label>
+                <input type="email" class="form-control" id="signInEmail" name="email" placeholder="youremail@example.com"
+                       required>
+                <small id="signInEmailHelp" class="form-text text-muted"></small>
+                <div class="valid-feedback">
+                    Email provided is valid!
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid email!
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Reset password</button>
+        </form>
+</li>

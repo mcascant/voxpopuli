@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link href="style.css" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+	<!-- HEADER AND NAVIGATION SECTION -->
+
+	<header>
+
+		<!-- ADDING THE BOOTSTRAP NAVBAR WITH DROPDOWN FORMS FOR REGISTER & LOGIN-->
+
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+				<a class="navbar-brand" href="#"><img src="img/voxpopuli.jpg" alt="vox populi"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Meet the Team</a>
+						</li>
+
+						<!-- DROPDOWN LOGIN FORM -->
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-toggle="dropdown"
+							 aria-haspopup="true" aria-expanded="false">
+								Login
+							</a>
+							<div class="dropdown-menu" aria-labelledby="loginDropdown">
+								<form class="px-3 py-3 needs-validation" style="min-width: 250px;" novalidate action="" method="POST">
+									<div class="form-group">
+										<label for="loginEmail">Email address</label>
+										<input type="email" class="form-control" id="loginEmail" name="email" placeholder="youremail@example.com"
+										 required>
+										<small id="loginEmailHelp" class="form-text text-muted"></small>
+										<div class="valid-feedback">
+											Email provided is valid!
+										</div>
+										<div class="invalid-feedback">
+											Please provide a valid email!
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="loginPassword">Password</label>
+										<input type="password" class="form-control" id="loginPassword" name="password" placeholder="Password"
+										 minlength=6 required>
+										<small id="loginPasswordHelp" class="form-text text-muted"></small>
+										<div class="valid-feedback">
+											Password provided is valid!
+										</div>
+										<div class="invalid-feedback">
+											Please provide a valid password (min. 6 characters)!
+										</div>
+									</div>
+
+									<button type="submit" class="btn btn-primary" onclick="formload('/login')">Login</button>
+								</form>
+
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+
+
+	<!-- SCRIPTS SECTION -->
+
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+
+	<!-- BOOSTRAP FORM VALIDATION SCRIPT CALL SECTION -->
+
+	<script type="text/javascript" src="login.js"></script>
+</body>
+
+</html>

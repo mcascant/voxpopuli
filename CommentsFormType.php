@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Post;
+
 use App\Entity\Comments;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -19,7 +19,7 @@ class CommentsFormType extends AbstractType
         $builder->add('title', TextType::class)
             ->add( 'body', TextType::class)
             ->add('userId', IntegerType::class)
-            ->add('postId', IntegerType::class);
+            ->add('postId', IntegerType::class)
             ->add('pubDate', DateTimeType::class);
 
         if ($options['standalone']) {

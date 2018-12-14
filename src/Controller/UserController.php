@@ -33,9 +33,8 @@ class UserController extends AbstractController
      * @Route("/login", name="login", methods={"GET", "OPTIONS"})
      *
      */
-    /*public function showLoginAction(User $user)
+    public function showLoginAction(User $user)
     {
-        var_dump($user->getEmail());
         $data = $this->get('serializer')->serialize($user, 'json');
         
         
@@ -44,5 +43,5 @@ class UserController extends AbstractController
         $response->headers->set('Content-Type', 'application/json');
         
         return $response;
-    }*/
+    }
 }

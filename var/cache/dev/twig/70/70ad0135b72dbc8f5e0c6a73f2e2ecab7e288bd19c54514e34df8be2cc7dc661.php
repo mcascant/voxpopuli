@@ -58,7 +58,13 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         // line 23
         $this->displayBlock('javascripts', $context, $blocks);
         // line 37
-        echo "    </body>
+        echo "        
+            <!-- ADDTHIS SCRIPT -->
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0a90b030710d46\"></script>
+
+
+    </body>
 </html>
 ";
         
@@ -168,7 +174,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     public function getDebugInfo()
     {
-        return array (  143 => 24,  134 => 23,  123 => 20,  114 => 19,  102 => 14,  93 => 13,  82 => 9,  73 => 8,  61 => 37,  59 => 23,  56 => 22,  54 => 19,  50 => 17,  48 => 13,  44 => 11,  42 => 8,  33 => 1,);
+        return array (  149 => 24,  140 => 23,  129 => 20,  120 => 19,  108 => 14,  99 => 13,  88 => 9,  79 => 8,  61 => 37,  59 => 23,  56 => 22,  54 => 19,  50 => 17,  48 => 13,  44 => 11,  42 => 8,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -209,6 +215,12 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
             <!-- BOOSTRAP FORM VALIDATION SCRIPT CALL SECTION -->
             <script type=\"text/javascript\" src=\"/js/script.js\"></script>
         {% endblock %}
+        
+            <!-- ADDTHIS SCRIPT -->
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type=\"text/javascript\" src=\"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0a90b030710d46\"></script>
+
+
     </body>
 </html>
 ", "base.html.twig", "/home/developer/workspace/project-wf3/templates/base.html.twig");

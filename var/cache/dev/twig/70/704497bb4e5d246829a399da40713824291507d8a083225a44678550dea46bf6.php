@@ -40,7 +40,7 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
 
                 <div class=\"modal-title\">
                     <h5 class=\"modal-title\" id=\"exampleModalCenterTitle\">
-                        {\$post.title}
+                        \${post.title}
                     </h5>
                 </div>
 
@@ -66,6 +66,11 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
             </div>
 
             <div class=\"modal-footer\">
+                
+               
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class=\"addthis_inline_share_toolbox\"></div>
+                
                 <button type=\"button\" class=\"btn btn-primary\">SocialStuff</button>
                 <button type=\"button\" class=\"btn btn-primary\">Archive</button>
                 <button type=\"button\" class=\"btn btn-primary\">Save changes</button>
@@ -73,7 +78,8 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
             </div>
         </div>
     </div>
-</div>";
+</div>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -108,7 +114,7 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
 
                 <div class=\"modal-title\">
                     <h5 class=\"modal-title\" id=\"exampleModalCenterTitle\">
-                        {\$post.title}
+                        \${post.title}
                     </h5>
                 </div>
 
@@ -134,6 +140,11 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
             </div>
 
             <div class=\"modal-footer\">
+                
+               
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class=\"addthis_inline_share_toolbox\"></div>
+                
                 <button type=\"button\" class=\"btn btn-primary\">SocialStuff</button>
                 <button type=\"button\" class=\"btn btn-primary\">Archive</button>
                 <button type=\"button\" class=\"btn btn-primary\">Save changes</button>
@@ -141,6 +152,7 @@ class __TwigTemplate_6376cb2b94f4533bec9546c9075418c53e7d6c4f3d6cb04c8d337266ea5
             </div>
         </div>
     </div>
-</div>", "Post/DetailsModal.html", "/home/developer/workspace/project-wf3/templates/Post/DetailsModal.html");
+</div>
+", "Post/DetailsModal.html", "/home/developer/workspace/project-wf3/templates/Post/DetailsModal.html");
     }
 }

@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
-use App\Entity\Vote;
 use App\Form\PostFormType;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
@@ -20,25 +19,33 @@ class VoteController extends Controller
 
    
     /**
-     * @Route("/vote/create", name="create_vote")
+     * @Route("/vote/create/{post}", name="create_vote")
      */
-    
-    public function createVote(Request $request)
+    public function createVote(Request $request, Post $post)
     {
-        $vote = new Vote();
-        
-        
-        if ($vote->getCreator() == false && $vote->getPostId() == false){
-            return $this->render('Vote/Create.html.twig', ['formObj' => $form->createView()]);
+        if ($post->getVoters()->contains($this->getUser())) {
+            return new JsonResponse(
+                [
+                    'error' => [
+                        'messages' => [
+                            'You have already voted, you can only vote once'
+                        ]
+                    ]
+                ],
+                403
+            );
         }
+
+        $post->addVoter($this->getUser());
+        $manager = $this->getDoctrine()->getManager();
+        $manager->persist($post);
+        $manager->flush();
         
-        else{
-            
-            // count relation userId && PostID
-            return new JsonResponse("You have already voted, you can only vote once");
-        }
-            
-    return new JsonResponse("Vote added" . $post->getTitle());
+        return new JsonResponse(
+            [
+                'data' => ['Vote added']
+            ]
+        );
     
     }
 }

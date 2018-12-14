@@ -11,6 +11,9 @@ use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use App\Form\UserFormType;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\FOSUserEvents;
 
 class UserController extends AbstractController
 {
@@ -19,14 +22,21 @@ class UserController extends AbstractController
      * @Route("/register", name="register", methods={"POST"})
      * 
      */
-    public function createRegisterAction(Request $request, EncoderFactoryInterface $factory) 
-    {
+    public function createRegisterAction(
+        Request $request,
+        EncoderFactoryInterface $factory,
+        \Swift_Mailer $mailer,
+        EventDispatcherInterface $dispatcher
+    ) {
         $user = new User();
         $form = $this->createForm(UserFormType::class, $user);
         
         $form->submit($request->request->all());
         
         if ($form->isValid()) {
+            $event = new FormEvent($form, $request);
+            $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
+            
             $user->setSalt(md5($user->getUsername()));
             $encoder = $factory->getEncoder($user);
             

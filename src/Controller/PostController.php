@@ -13,9 +13,6 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 
-
-
-
 class PostController extends Controller
 {
 

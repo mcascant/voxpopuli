@@ -114,6 +114,7 @@ class __TwigTemplate_9600cd92a833549abbedcc355ab50df064af8f8fc2bf84943fc9e695368
 
 \t<!-- FOOTER SECTION -->
 \t{% include 'footer.html.twig' %}
-{% endblock %}", "homepage.html.twig", "/home/developer/workspace/project-wf3/templates/homepage.html.twig");
+{% endblock %}
+", "homepage.html.twig", "/home/developer/workspace/project-wf3/templates/homepage.html.twig");
     }
 }

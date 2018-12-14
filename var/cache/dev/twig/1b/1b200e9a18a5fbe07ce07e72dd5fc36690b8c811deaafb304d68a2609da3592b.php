@@ -54,9 +54,6 @@ class __TwigTemplate_60524e59032b0fa2f528bc75443df302dda75f29e8233c62409c6024938
             <li class=\"nav-item active\">
                 <a class=\"nav-link\" href=\"#\">Cards view <span class=\"sr-only\">(current)</span></a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">List view</a>
-            </li>
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2 \" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
@@ -74,36 +71,28 @@ class __TwigTemplate_60524e59032b0fa2f528bc75443df302dda75f29e8233c62409c6024938
 
 <!-- MAIN PETITION CREATION FORM SECTION -->
 ";
-        // line 42
-        $this->loadTemplate("Post/Create.html.twig", "main.html.twig", 42)->display($context);
-        // line 43
+        // line 39
+        $this->loadTemplate("Post/Create.html.twig", "main.html.twig", 39)->display($context);
+        // line 40
         echo "
 <!-- MAIN CARDS (PETITIONS) -->
 <div class=\"container\">
 ";
-        // line 46
-        $this->loadTemplate("cards.html.twig", "main.html.twig", 46)->display($context);
-        // line 47
-        echo "
-    <!-- INI modalPetitionView -->
-    ";
-        // line 49
-        $this->loadTemplate("modalPetition.html.twig", "main.html.twig", 49)->display($context);
-        // line 50
-        echo "
-    <!-- END modalPetitionView -->
-</div>
+        // line 43
+        $this->loadTemplate("cards.html.twig", "main.html.twig", 43)->display($context);
+        // line 44
+        echo "</div>
 
 <!-- MAIN MEET THE TEAM SECTION -->
 ";
-        // line 55
-        $this->loadTemplate("team.html.twig", "main.html.twig", 55)->display($context);
-        // line 56
+        // line 47
+        $this->loadTemplate("team.html.twig", "main.html.twig", 47)->display($context);
+        // line 48
         echo "
 <!-- MAIN SOCIAL NETWORKS SECTION -->
 ";
-        // line 58
-        $this->loadTemplate("social.html.twig", "main.html.twig", 58)->display($context);
+        // line 50
+        $this->loadTemplate("social.html.twig", "main.html.twig", 50)->display($context);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -124,7 +113,7 @@ class __TwigTemplate_60524e59032b0fa2f528bc75443df302dda75f29e8233c62409c6024938
 
     public function getDebugInfo()
     {
-        return array (  106 => 58,  102 => 56,  100 => 55,  93 => 50,  91 => 49,  87 => 47,  85 => 46,  80 => 43,  78 => 42,  40 => 6,  38 => 5,  34 => 3,  32 => 2,  29 => 1,);
+        return array (  95 => 50,  91 => 48,  89 => 47,  84 => 44,  82 => 43,  77 => 40,  75 => 39,  40 => 6,  38 => 5,  34 => 3,  32 => 2,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -151,9 +140,6 @@ class __TwigTemplate_60524e59032b0fa2f528bc75443df302dda75f29e8233c62409c6024938
             <li class=\"nav-item active\">
                 <a class=\"nav-link\" href=\"#\">Cards view <span class=\"sr-only\">(current)</span></a>
             </li>
-            <li class=\"nav-item\">
-                <a class=\"nav-link\" href=\"#\">List view</a>
-            </li>
         </ul>
         <form class=\"form-inline my-2 my-lg-0\">
             <input class=\"form-control mr-sm-2 \" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
@@ -175,11 +161,6 @@ class __TwigTemplate_60524e59032b0fa2f528bc75443df302dda75f29e8233c62409c6024938
 <!-- MAIN CARDS (PETITIONS) -->
 <div class=\"container\">
 {% include 'cards.html.twig' %}
-
-    <!-- INI modalPetitionView -->
-    {% include 'modalPetition.html.twig' %}
-
-    <!-- END modalPetitionView -->
 </div>
 
 <!-- MAIN MEET THE TEAM SECTION -->

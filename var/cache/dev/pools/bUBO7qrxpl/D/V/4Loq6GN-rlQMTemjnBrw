@@ -13,11 +13,6 @@
                 'name' => [
                     'create_post',
                 ],
-                'methods' => [
-                    [
-                        'POST',
-                    ],
-                ],
             ],
         ],
         [

@@ -27,12 +27,12 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 
         // line 1
         echo "<div class=\"container\">
-\t<form class=\"px-3 py-3 needs-validation\" style=\"min-width: 500px;\"  action=\"/post/create\"  method=\"post\" novalidate>
-\t\t<div class=\"form-group\">
-\t\t\t<label for=\"postTitle\">Title</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postTitle\" name=\"postTitle\" placeholder=\"Enter your petition title\"
-\t\t\t\t   required>
-\t\t\t<small id=\"postTitleHelp\" class=\"form-text text-muted\"></small>
+\t<form class=\"px-3 py-3 needs-validation\" style=\"min-width: 500px;\" action=\"/post/create\" method=\"post\" novalidate>
+
+\t\t<div class=\"form-group-lg\">
+\t\t\t<label for=\"title\">Title</label>
+\t\t\t\t<input type=\"text\" class=\"form-control\" name=\"title\" placeholder=\"Enter your petition title\" required>
+\t\t\t\t<small id=\"titleHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tTitle provided is valid!
 \t\t\t</div>
@@ -42,23 +42,10 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postTags\">Tags</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postTags\" name=\"postTags\" placeholder=\"Enter your petition title\"
+\t\t\t<label for=\"text\">Text</label>
+\t\t\t<input type=\"text\" class=\"form-control\" name=\"text\" placeholder=\"Enter your petition text\"
 \t\t\t\t   required>
-\t\t\t<small id=\"postTagsHelp\" class=\"form-text text-muted\"></small>
-\t\t\t<div class=\"valid-feedback\">
-\t\t\t\tTags provided are valid!
-\t\t\t</div>
-\t\t\t<div class=\"invalid-feedback\">
-\t\t\t\tPlease provide valid tags!
-\t\t\t</div>
-\t\t</div>
-
-\t\t<div class=\"form-group\">
-\t\t\t<label for=\"postText\">Text</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postText\" name=\"postText\" placeholder=\"Enter your petition text\"
-\t\t\t\t   required>
-\t\t\t<small id=\"postTextHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<small id=\"textHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tText provided is valid!
 \t\t\t</div>
@@ -68,10 +55,23 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postVotesMin\">Number of votes required</label>
-\t\t\t<input type=\"number\" class=\"form-control\" id=\"postVotesMin\" name=\"postVotesMin\" placeholder=\"Enter your petition title\"
+\t\t\t<label for=\"tagList\">Tag List</label>
+\t\t\t<input type=\"text\" class=\"form-control\" name=\"tagList\" placeholder=\"Enter your petition text\"
 \t\t\t\t   required>
-\t\t\t<small id=\"postVotesMinHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<small id=\"tagListHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<div class=\"valid-feedback\">
+\t\t\t\tText provided is valid!
+\t\t\t</div>
+\t\t\t<div class=\"invalid-feedback\">
+\t\t\t\tPlease provide a valid text!
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"form-group\">
+\t\t\t<label for=\"minimumVotes\">Number of votes required</label>
+\t\t\t<input type=\"number\" class=\"form-control\" name=\"minimumVotes\" placeholder=\"Determine the objective of votes you want to reach\"
+\t\t\t\t   required>
+\t\t\t<small id=\"minimumVotesHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tVotes minimum provided is valid!
 \t\t\t</div>
@@ -81,9 +81,10 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postPubDate\">Publication Date</label>
-\t\t\t<input type=\"datetime-local\" class=\"form-control\" id=\"postPubDate\" name=\"postPubDate\">
-\t\t\t<small id=\"postVotesMinHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<label for=\"userId\">UserId</label>
+\t\t\t<input type=\"number\" class=\"form-control\" name=\"userId\" placeholder=\"Determine the objective of votes you want to reach\"
+\t\t\t\t   required>
+\t\t\t<small id=\"userIdHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tVotes minimum provided is valid!
 \t\t\t</div>
@@ -117,12 +118,12 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"container\">
-\t<form class=\"px-3 py-3 needs-validation\" style=\"min-width: 500px;\"  action=\"/post/create\"  method=\"post\" novalidate>
-\t\t<div class=\"form-group\">
-\t\t\t<label for=\"postTitle\">Title</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postTitle\" name=\"postTitle\" placeholder=\"Enter your petition title\"
-\t\t\t\t   required>
-\t\t\t<small id=\"postTitleHelp\" class=\"form-text text-muted\"></small>
+\t<form class=\"px-3 py-3 needs-validation\" style=\"min-width: 500px;\" action=\"/post/create\" method=\"post\" novalidate>
+
+\t\t<div class=\"form-group-lg\">
+\t\t\t<label for=\"title\">Title</label>
+\t\t\t\t<input type=\"text\" class=\"form-control\" name=\"title\" placeholder=\"Enter your petition title\" required>
+\t\t\t\t<small id=\"titleHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tTitle provided is valid!
 \t\t\t</div>
@@ -132,23 +133,10 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postTags\">Tags</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postTags\" name=\"postTags\" placeholder=\"Enter your petition title\"
+\t\t\t<label for=\"text\">Text</label>
+\t\t\t<input type=\"text\" class=\"form-control\" name=\"text\" placeholder=\"Enter your petition text\"
 \t\t\t\t   required>
-\t\t\t<small id=\"postTagsHelp\" class=\"form-text text-muted\"></small>
-\t\t\t<div class=\"valid-feedback\">
-\t\t\t\tTags provided are valid!
-\t\t\t</div>
-\t\t\t<div class=\"invalid-feedback\">
-\t\t\t\tPlease provide valid tags!
-\t\t\t</div>
-\t\t</div>
-
-\t\t<div class=\"form-group\">
-\t\t\t<label for=\"postText\">Text</label>
-\t\t\t<input type=\"text\" class=\"form-control\" id=\"postText\" name=\"postText\" placeholder=\"Enter your petition text\"
-\t\t\t\t   required>
-\t\t\t<small id=\"postTextHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<small id=\"textHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tText provided is valid!
 \t\t\t</div>
@@ -158,10 +146,23 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postVotesMin\">Number of votes required</label>
-\t\t\t<input type=\"number\" class=\"form-control\" id=\"postVotesMin\" name=\"postVotesMin\" placeholder=\"Enter your petition title\"
+\t\t\t<label for=\"tagList\">Tag List</label>
+\t\t\t<input type=\"text\" class=\"form-control\" name=\"tagList\" placeholder=\"Enter your petition text\"
 \t\t\t\t   required>
-\t\t\t<small id=\"postVotesMinHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<small id=\"tagListHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<div class=\"valid-feedback\">
+\t\t\t\tText provided is valid!
+\t\t\t</div>
+\t\t\t<div class=\"invalid-feedback\">
+\t\t\t\tPlease provide a valid text!
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"form-group\">
+\t\t\t<label for=\"minimumVotes\">Number of votes required</label>
+\t\t\t<input type=\"number\" class=\"form-control\" name=\"minimumVotes\" placeholder=\"Determine the objective of votes you want to reach\"
+\t\t\t\t   required>
+\t\t\t<small id=\"minimumVotesHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tVotes minimum provided is valid!
 \t\t\t</div>
@@ -171,9 +172,10 @@ class __TwigTemplate_0980e245a8785c8be477266d8193b0cd592f1e6030b907a08282fb75c5b
 \t\t</div>
 
 \t\t<div class=\"form-group\">
-\t\t\t<label for=\"postPubDate\">Publication Date</label>
-\t\t\t<input type=\"datetime-local\" class=\"form-control\" id=\"postPubDate\" name=\"postPubDate\">
-\t\t\t<small id=\"postVotesMinHelp\" class=\"form-text text-muted\"></small>
+\t\t\t<label for=\"userId\">UserId</label>
+\t\t\t<input type=\"number\" class=\"form-control\" name=\"userId\" placeholder=\"Determine the objective of votes you want to reach\"
+\t\t\t\t   required>
+\t\t\t<small id=\"userIdHelp\" class=\"form-text text-muted\"></small>
 \t\t\t<div class=\"valid-feedback\">
 \t\t\t\tVotes minimum provided is valid!
 \t\t\t</div>

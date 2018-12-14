@@ -40,28 +40,20 @@ class __TwigTemplate_b209be53e0a8d17c31e3044ae2e687aa00cdc1f9057041534a3c859e4bf
         $this->loadTemplate("nav/mainLinks.html.twig", "navbar.html.twig", 10)->display($context);
         // line 11
         echo "
-                <!-- DROPDOWN SIGNUP FORM TO REGISTER-->
                 ";
+        // line 12
+        $this->loadTemplate("forms/registerForm.html.twig", "navbar.html.twig", 12)->display($context);
         // line 13
-        $this->loadTemplate("forms/registerForm.html.twig", "navbar.html.twig", 13)->display($context);
+        echo "
+                ";
         // line 14
-        echo "                <!-- DROPDOWN SIGNIN FORM TO LOGIN -->
-                ";
+        $this->loadTemplate("forms/loginForm.html.twig", "navbar.html.twig", 14)->display($context);
         // line 15
-        $this->loadTemplate("forms/loginForm.html.twig", "navbar.html.twig", 15)->display($context);
+        echo "
+                ";
         // line 16
-        echo "
-                <!-- DROPDOWN FORGOT PASSWORD FORM TO CALL THE CHANGE PASSWORD FORM -->
-                ";
-        // line 18
-        $this->loadTemplate("forms/pwdChangeForm.html.twig", "navbar.html.twig", 18)->display($context);
-        // line 19
-        echo "
-                <!-- DROPDOWN CHANGE PASSWORD FORM  -->
-                ";
-        // line 21
-        $this->loadTemplate("forms/pwdChangeFormForm.html.twig", "navbar.html.twig", 21)->display($context);
-        // line 22
+        $this->loadTemplate("forms/pwdChangeForm.html.twig", "navbar.html.twig", 16)->display($context);
+        // line 17
         echo "            </ul>
         </div>
     </div>
@@ -86,7 +78,7 @@ class __TwigTemplate_b209be53e0a8d17c31e3044ae2e687aa00cdc1f9057041534a3c859e4bf
 
     public function getDebugInfo()
     {
-        return array (  65 => 22,  63 => 21,  59 => 19,  57 => 18,  53 => 16,  51 => 15,  48 => 14,  46 => 13,  42 => 11,  40 => 10,  29 => 1,);
+        return array (  57 => 17,  55 => 16,  52 => 15,  50 => 14,  47 => 13,  45 => 12,  42 => 11,  40 => 10,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -102,16 +94,11 @@ class __TwigTemplate_b209be53e0a8d17c31e3044ae2e687aa00cdc1f9057041534a3c859e4bf
             <ul class=\"navbar-nav ml-auto\">
                 {% include 'nav/mainLinks.html.twig' %}
 
-                <!-- DROPDOWN SIGNUP FORM TO REGISTER-->
                 {% include 'forms/registerForm.html.twig' %}
-                <!-- DROPDOWN SIGNIN FORM TO LOGIN -->
+
                 {% include 'forms/loginForm.html.twig' %}
 
-                <!-- DROPDOWN FORGOT PASSWORD FORM TO CALL THE CHANGE PASSWORD FORM -->
                 {% include 'forms/pwdChangeForm.html.twig' %}
-
-                <!-- DROPDOWN CHANGE PASSWORD FORM  -->
-                {% include 'forms/pwdChangeFormForm.html.twig' %}
             </ul>
         </div>
     </div>

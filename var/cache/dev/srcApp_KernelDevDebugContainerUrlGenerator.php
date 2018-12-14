@@ -20,6 +20,10 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         $this->defaultLocale = $defaultLocale;
         if (null === self::$declaredRoutes) {
             self::$declaredRoutes = array(
+        'search_comments' => array(array(), array('_controller' => 'App\\Controller\\CommentsController::search'), array(), array(array('text', '/comments/search')), array(), array()),
+        'create_comments' => array(array(), array('_controller' => 'App\\Controller\\CommentsController::createComments'), array(), array(array('text', '/comments/create')), array(), array()),
+        'comments_list' => array(array(), array('_controller' => 'App\\Controller\\CommentsController::commentsList'), array(), array(array('text', '/comments/list')), array(), array()),
+        'comments_details' => array(array('comments'), array('_controller' => 'App\\Controller\\CommentsController::commentsDetail'), array(), array(array('variable', '/', '[^/]++', 'comments', true), array('text', '/comments')), array(), array()),
         'homepage' => array(array(), array('_controller' => 'App\\Controller\\DefaultController::homepage'), array(), array(array('text', '/')), array(), array()),
         'search_post' => array(array(), array('_controller' => 'App\\Controller\\PostController::search'), array(), array(array('text', '/post/search')), array(), array()),
         'create_post' => array(array(), array('_controller' => 'App\\Controller\\PostController::createPost'), array(), array(array('text', '/post/create')), array(), array()),

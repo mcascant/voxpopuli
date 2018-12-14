@@ -28,14 +28,13 @@ class Comments
     private $body;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Post")
+     * @ORM\OneToMany(targetEntity="App\Entity\Post", mappedBy="post.id")
      * @ORM\JoinColumn(nullable=false)
      */
     private $postId;
     
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="integer")
      */
     private $userId;
 

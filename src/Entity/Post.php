@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\User;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
@@ -27,7 +29,7 @@ class Post
     private $text;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="integer")
      */
     private $pubDate;
 
@@ -35,6 +37,16 @@ class Post
      * @ORM\Column(type="integer")
      */
     private $userId;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $minimumVotes;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $tagList;
 
     public function getId(): ?int
     {
@@ -65,14 +77,13 @@ class Post
         return $this;
     }
 
-    public function getPubDate(): ?\DateTimeInterface
+    public function getPubDate(): ?int
     {
         return $this->pubDate;
     }
 
-    public function setPubDate(\DateTimeInterface $pubDate): self
+    public function setPubDate(int $pubDate): self
     {
-        $now = date("Y-m-d H:i:s");
         $this->pubDate = $pubDate;
 
         return $this;
@@ -86,6 +97,30 @@ class Post
     public function setUserId(int $userId): self
     {
         $this->userId = $userId;
+
+        return $this;
+    }
+
+    public function getMinimumVotes(): ?int
+    {
+        return $this->minimumVotes;
+    }
+
+    public function setMinimumVotes(?int $minimumVotes): self
+    {
+        $this->minimumVotes = $minimumVotes;
+
+        return $this;
+    }
+
+    public function getTagList(): ?string
+    {
+        return $this->tagList;
+    }
+
+    public function setTagList(?string $tagList): self
+    {
+        $this->tagList = $tagList;
 
         return $this;
     }

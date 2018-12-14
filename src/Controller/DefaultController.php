@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Intl\Exception\NotImplementedException;
+use Symfony\Component\Intl\Exception\NotImplementedException;;
 
 class DefaultController
 {
@@ -31,9 +31,3 @@ class DefaultController
         );
     }
 }
-
-
-
-
-
-

@@ -7,16 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
+use App\Entity\Comments;
 use App\Form\PostFormType;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
-class PostController extends Controller
+
+
+
+
+class CommentsController extends Controller
 {
 
     /**
-     * @Route("/post/search", name="search_post", methods={"GET", "OPTIONS"})
+     * @Route("/comments/search", name="search_comments", methods={"GET", "OPTIONS"})
      */
     public function search(Request $request)
     {
@@ -28,7 +33,7 @@ class PostController extends Controller
         }
 
         $manager = $this->getDoctrine()->getManager();
-        $repository = $manager->getRepository(Post::class);
+        $repository = $manager->getRepository(Comments::class);
         $pattern = $request->query->get('pattern');
 
         $posts = $repository->findAllByField($pattern);
@@ -46,31 +51,29 @@ class PostController extends Controller
 
     }
     /**
-     * @Route("/post/create", name="create_post")
+     * @Route("/comments/create", name="create_comments")
      */
-    public function createPost(Request $request)
+    public function createComments(Request $request)
     {
-        $post = new Post();
-        $form = $this->createForm(PostFormType::class, $post, ['standalone' => true]);
+        $comments = new Comments();
+        $form = $this->createForm(CommentsFormType::class, $comments, ['standalone' => true]);
 
         $form->submit($request->request->all()); // Trying with handlerRequest and form was not submitted!!! LEARN
-
-        if ($form->isValid())
-        {
+        if ($form->isValid()) {
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($post);
+            $manager->persist($comments);
             $manager->flush();
 
-            return $this->redirectToRoute('homepage');
+            return new JsonResponse("Comments created " . $comments->getTitle());
         }
 
-        return new JsonResponse("Failure in Post Creation");
+        return $this->render('Comments/Create.html.twig', ['formObj' => $form->createView()]);
     }
 
     /**
-     * @Route("/post/list", name="post_list")
+     * @Route("/comments/list", name="comments_list")
      */
-    public function postList()
+    public function commentsList()
     {
         $encoders = array(new JsonEncoder());
         $normalizers = array(new ObjectNormalizer());
@@ -78,7 +81,7 @@ class PostController extends Controller
 
 
         $arr = [
-            'posts' => $this->getDoctrine()->getRepository(Post::class)->findAll()
+            'comments' => $this->getDoctrine()->getRepository(Comments::class)->findAll()
         ];
 
         $jsonContent = $serializer->serialize($arr, 'json');
@@ -87,14 +90,19 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/post/{post}", name="post_details")
+     * @Route("/comments/{comments}", name="comments_details")
      */
-    public function postDetail(Post $post)
+    public function commentsDetail(Comments $comments)
     {
         $arr = [
-            'title' => $post->getTitle(),
-            'text' => $post->getText()
+            'title' => $comments->getTitle(),
+            'text' => $comments->getText()
         ];
         return new JsonResponse(implode(', ', $arr));
     }
 }
+
+
+
+
+

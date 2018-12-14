@@ -70,8 +70,7 @@ class UserController extends AbstractController
     {
         $email = $request->request->get('email');
         $password = $request->request->get('password');
-        //$data = $this->get('serializer')->serialize($username, 'json');
-        var_dump($password);
+
         $user = $this->getDoctrine()->getManager()->getRepository(User::class)
             ->findOneByEmail($email);
         
@@ -90,7 +89,7 @@ class UserController extends AbstractController
         
         if(!$encoder->isPasswordValid($user->getPassword(), $password, $salt)) {
             return new Response(
-                'Username or Password not valid.',
+                'Email or Password not valid.',
                 Response::HTTP_UNAUTHORIZED,
                 array('Content-type' => 'application/json')
             );

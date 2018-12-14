@@ -2,7 +2,8 @@
 fos_rest:
     format_listener:
         rules:
-            - { path: '^/', priorities: ['json'], fallback_format: 'json' }
+            - { path: '^/.+', priorities: ['json', 'html'], fallback_format: 'json' }
+            - { path: '^/', priorities: ['html'], fallback_format: 'html' }
     view:
         view_response_listener: true
 #    param_fetcher_listener:  true

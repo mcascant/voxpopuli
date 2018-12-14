@@ -12,10 +12,6 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
-
-
-
-
 class PostController extends Controller
 {
 
@@ -58,15 +54,17 @@ class PostController extends Controller
         $form = $this->createForm(PostFormType::class, $post, ['standalone' => true]);
 
         $form->submit($request->request->all()); // Trying with handlerRequest and form was not submitted!!! LEARN
-        if ($form->isValid()) {
+
+        if ($form->isValid())
+        {
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($post);
             $manager->flush();
 
-            return new JsonResponse("Post created " . $post->getTitle());
+            return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('Post/Create.html.twig', ['formObj' => $form->createView()]);
+        return new JsonResponse("Failure in Post Creation");
     }
 
     /**
@@ -100,8 +98,3 @@ class PostController extends Controller
         return new JsonResponse(implode(', ', $arr));
     }
 }
-
-
-
-
-

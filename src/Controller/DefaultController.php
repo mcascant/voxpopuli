@@ -24,9 +24,3 @@ class DefaultController
         );
     }
 }
-
-
-
-
-
-

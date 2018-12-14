@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="img/voxpopuli.jpg" alt="vox populi">
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav ml-auto">
+                {% include 'nav/mainLinks.html.twig' %}
+
+                {% include 'forms/registerForm.html.twig' %}
+
+                {% include 'forms/loginForm.html.twig' %}
+
+                {% include 'forms/pwdChangeForm.html.twig' %}
+            </ul>
+        </div>
+    </div>
+</nav>

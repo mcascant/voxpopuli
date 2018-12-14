@@ -14,6 +14,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\FOSUserEvents;
+use Psr\Log\LoggerInterface;
 
 class UserController extends AbstractController
 {
@@ -76,7 +77,7 @@ class UserController extends AbstractController
      * @Route("/login", name="article_show", methods={"POST"})
      *
      */
-    public function loginAction(Request $request, EncoderFactoryInterface $factory)
+    public function loginAction(Request $request, EncoderFactoryInterface $factory, LoggerInterface $logger)
     {
         $email = $request->request->get('email');
         $password = $request->request->get('password');
@@ -87,8 +88,9 @@ class UserController extends AbstractController
         /// End Retrieve user
         // Check if the user exists !
         if(!$user){
+            $logger->debug('User does not exist');
             return new Response(
-                'Username doesnt exists',
+                'Credentials error',
                 Response::HTTP_UNAUTHORIZED,
                 array('Content-type' => 'application/json')
             );
@@ -98,8 +100,9 @@ class UserController extends AbstractController
         $salt = $user->getSalt();
         
         if(!$encoder->isPasswordValid($user->getPassword(), $password, $salt)) {
+            $logger->debug('Password does not match');
             return new Response(
-                'Email or Password not valid.',
+                'Credentials error',
                 Response::HTTP_UNAUTHORIZED,
                 array('Content-type' => 'application/json')
             );

@@ -63,16 +63,11 @@ figure {
 [class*="col-"] {
     padding: 1rem;
 }
-
-
 /*--- OWN Full width modal, for Petition View --*/
 .modal-full {
   min-width: 100%;
   margin: 0;
 }
-
-
-
 
 /*
 Extra small (xs) devices (portrait phones, less than 576px)

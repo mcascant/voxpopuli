@@ -298,7 +298,32 @@
 		</div>
 
 
-
+		<!--- MAIN NAVBAR WITH PAGINATION AND TOGGLE/SEARCH BUTTONS -->
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<!-- <nav aria-label="Page navigation example"> -->
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link text-secondary" href="#">Previous</a></li>
+					<li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
+					<li class="page-item"><a class="page-link text-secondary" href="#">2</a></li>
+					<li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
+					<li class="page-item"><a class="page-link text-secondary" href="#">Next</a></li>
+				</ul>
+				<!-- </nav> -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Cards view <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">List view</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+					<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</nav>
+		</div>
 
 		<!-- MAIN EXPLANATIONS SECTION -->
 
@@ -323,70 +348,52 @@
 				</div>
 		</figure>
 
-		<hr class="light">
 
-		<!--- MAIN NAVBAR WITH PAGINATION AND TOGGLE/SEARCH BUTTONS -->
+
+		<!-- MAIN CARDS (PETITIONS) VERSION 1 TEST SECTION -->
+
 		<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between">
+			<!-- Example row of columns -->
+			<div class="row">
+				<div class="card col-md-4">
+					<h2>PETITION 1</h2>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
+						tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+						malesuada magna mollis euismod. Donec sed odio dui. </p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="card col-md-4">
+					<h2>PETITION 2</h2>
+					<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo,
+						tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+						malesuada magna mollis euismod. Donec sed odio dui. </p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+				<div class="card col-md-4">
+					<h2>PETITION 3</h2>
+					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum
+						id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+						mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+				</div>
+			</div>
+			<hr class="light">
 
-				<!-- <nav aria-label="Page navigation example"> -->
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link text-secondary" href="#">Previous</a></li>
-					<li class="page-item"><a class="page-link text-secondary" href="#">1</a></li>
-					<li class="page-item"><a class="page-link text-secondary" href="#">2</a></li>
-					<li class="page-item"><a class="page-link text-secondary" href="#">3</a></li>
-					<li class="page-item"><a class="page-link text-secondary" href="#">Next</a></li>
-				</ul>
-				<!-- </nav> -->
-
-				<div class="btn-group btn-group-toggle" data-toggle="buttons">
-						<label class="btn btn-secondary active">
-						  <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
-						</label>
-						
-						<label class="btn btn-secondary">
-						  <input type="radio" name="options" id="option2" autocomplete="off"> Radio
-						</label>
-
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Cards view <span class="sr-only">(current)</span></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">List view</a>
-					</li>
-				</ul>
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-				</form>
-
-			</nav>
 		</div>
-
 
 		<!-- MAIN CARDS (PETITIONS) VERSION 2 TEST SECTION -->
 
 		<div class="container">
-			<div class="row">
-				<div class="card col-md-4">
+			<div class="col-md-4">
+				<div class="card">
 					<div class="card-header">
-						<h5>Petition #1</h5>
+						<h5>Petition #1 <span class="badge badge-pill badge-warning">1.256/2.000</span></h5>
 						<hr class="light">
-
-						<!-- INI Progress bar -->
 						<div class="progress">
-							<!-- INFO:
-								(none) : when backedVotes > objectiveVotes
-							bg-info : when backedVotes =80% objectiveVotes
-							bg-warning : when backedVotes > objectiveVotes
-						-->
-							<div class="progress-bar bg-success" role="progressbar" style="width: 62.5%;" aria-valuenow="BAKED-VOTES"
-							 aria-valuemin="0" aria-valuemax="MIN-VOTES">62.5%</div>
+							<div class="progress-bar bg-success" role="progressbar" style="width: 62.5%;" aria-valuenow="1.250"
+							 aria-valuemin="0" aria-valuemax="2000">62.5%</div>
 						</div>
-						<!-- END Progress bar -->
-
-						<br>
+						<hr class="light">
 						<p>Tag1, Tag2, Tag3, Tag4</p>
 					</div>
 					<div class="card-body">
@@ -394,148 +401,64 @@
 							praesentium illo veritatis dolores magnam possimus beatae accusamus ducimus eveniet fugiat iure commodi totam
 							quae
 							dolorum officiis recusandae.</p>
-
+						<a href="#" class="btn btn-primary">Read more &raquo; </a>
 						<br>
-
-						<div class="d-flex justify-content-between">
-							<button type="button" class="btn btn-info">Share this</button>
-
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#petition-form-view">Display petition</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="card col-md-4">
-					<div class="card-header">
-						<h5>Petition #2</h5>
-						<hr class="light">
-
-						<!-- INI Progress bar -->
-						<div class="progress">
-							<!-- INFO:
-									(none) : when backedVotes > objectiveVotes
-								bg-info : when backedVotes =80% objectiveVotes
-								bg-warning : when backedVotes > objectiveVotes
-							-->
-							<div class="progress-bar bg-success" role="progressbar" style="width: 62.5%;" aria-valuenow="BAKED-VOTES"
-							 aria-valuemin="0" aria-valuemax="MIN-VOTES">62.5%</div>
-						</div>
-						<!-- END Progress bar -->
-
-						<br>
-						<p>Tag1, Tag2, Tag3, Tag4</p>
-					</div>
-					<div class="card-body">
-						<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem expedita nihil, quisquam,
-							praesentium illo veritatis dolores magnam possimus beatae accusamus ducimus eveniet fugiat iure commodi totam
-							quae
-							dolorum officiis recusandae.</p>
-
-						<br>
-
-						<div class="d-flex justify-content-between">
-							<button type="button" class="btn btn-info">Share this</button>
-
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#petition-form-view">Display petition</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="card col-md-4">
-					<div class="card-header">
-						<h5>Petition #3</h5>
-						<hr class="light">
-
-						<!-- INI Progress bar -->
-						<div class="progress">
-							<!-- INFO:
-										(none) : when backedVotes > objectiveVotes
-									bg-info : when backedVotes =80% objectiveVotes
-									bg-warning : when backedVotes > objectiveVotes
-								-->
-							<div class="progress-bar bg-success" role="progressbar" style="width: 62.5%;" aria-valuenow="BAKED-VOTES"
-							 aria-valuemin="0" aria-valuemax="MIN-VOTES">62.5%</div>
-						</div>
-						<!-- END Progress bar -->
-
-						<br>
-						<p>Tag1, Tag2, Tag3, Tag4</p>
-					</div>
-					<div class="card-body">
-						<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem expedita nihil, quisquam,
-							praesentium illo veritatis dolores magnam possimus beatae accusamus ducimus eveniet fugiat iure commodi totam
-							quae
-							dolorum officiis recusandae.</p>
-
-						<br>
-
-						<div class="d-flex justify-content-between">
-							<button type="button" class="btn btn-info">Share this</button>
-
-							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#petition-form-view">Display petition</button>
+						<div class="tileButtons votesCounter">
+							<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#petition-form-view">Display
+								petition</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<hr class="light">
-
-
-
-
 
 		<!-- MAIN PETITION CREATION FORM SECTION -->
 
 		<div class="modal fade" id="petition-form-view" tabindex="-1" role="dialog" aria-labelledby="petition-form-view"
 		 aria-hidden="true">
-
-			<!-- .modal-full is OWN CSS-->
-			<div class="modal-dialog modal-dialog-centered modal-full" role="document">
-
+			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
 
-					<div class="container-fluid">
-						<form class="px-3 py-3 needs-validation" style="min-width: 500px;" novalidate>
+					<div class="container">
+						<div class="row">
+							<div class="col-9-xs col-9-sm col-9-md col-9-lg col-9-xl">
 
-							<div class="modal-header alert alert-secondary flex-column">
+								<form class="px-3 py-3 needs-validation" style="min-width: 500px;" novalidate>
 
-								<!--field Title-->
-								<div class="form-group-lg">
-									<input type="text" class="form-control-lg alert alert-primary"  id="postTitle" name="postTitle"
-									 placeholder="Enter your petition title" required>
-									<small id="postTitleHelp" class="form-text text-muted"></small>
-									<div class="valid-feedback">
-										Title provided is valid!
-									</div>
-									<div class="invalid-feedback">
-										Please provide a valid title!
-									</div>
-								</div>
-
-								<div class="container d-flex">
-
-									<!--field Tags-->
-									<div class="form-group">
-										<label for="postTags">Tags</label>
-										<textarea type="text" class="form-control" id="postTags" name="postTags" rows="8" placeholder="Add up to 6 different tags"
-										 required> </textarea>
-										<small id="postTagsHelp" class="form-text text-muted"></small>
-										<div class="valid-feedback">
-											Tags provided are valid!
+									<!--field Title-->
+									<div class="modal-header">
+										<div class="form-group">
+											<label for="postTitle">Title</label>
+											<input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter your petition title"
+											 required>
+											<small id="postTitleHelp" class="form-text text-muted"></small>
+											<div class="valid-feedback">
+												Title provided is valid!
+											</div>
+											<div class="invalid-feedback">
+												Please provide a valid title!
+											</div>
 										</div>
-										<div class="invalid-feedback">
-											Please provide valid tags!
+
+										<!--field Tags-->
+										<div class="form-group">
+											<label for="postTags">Tags</label>
+											<input type="text" class="form-control" id="postTags" name="postTags" placeholder="Enter your petition title"
+											 required>
+											<small id="postTagsHelp" class="form-text text-muted"></small>
+											<div class="valid-feedback">
+												Tags provided are valid!
+											</div>
+											<div class="invalid-feedback">
+												Please provide valid tags!
+											</div>
 										</div>
 									</div>
-
-
-									<div class="container d-flex flex-column">
-
-
+									<div class="col-9-xs col-9-sm col-9-md col-9-lg col-9-xl">
 										<!--field requiredVotes-->
 										<div class="form-group">
 											<label for="postVotesMin">Number of votes required</label>
-											<input type="number" class="form-control" id="postVotesMin" name="postVotesMin" placeholder="Enter your petition text"
+											<input type="number" class="form-control" id="postVotesMin" name="postVotesMin" placeholder="Enter your petition title"
 											 required>
 											<small id="postVotesMinHelp" class="form-text text-muted"></small>
 											<div class="valid-feedback">
@@ -551,7 +474,7 @@
 
 										<!--field destinationBody-->
 										<div class="form-group">
-											<label for="recipientBody">Choose a recipient:</label>
+											<label for="recipientBody">Choose a recipient</label>
 											<input type="text" class="form-control" id="recipientBody" name="recipientBody" placeholder="Choose a recipient"
 											 required>
 											<small id="recipientBodyHelp" class="form-text text-muted"></small>
@@ -563,16 +486,13 @@
 											</div>
 										</div>
 									</div>
-								</div>
 							</div>
-
 
 							<!--field petitionText-->
 							<div class="form-group">
 								<label for="postText">Text</label>
-								<textarea type="text" rows="15" class="form-control" id="postText" name="postText" placeholder="Enter your petition text"
-								 required></textarea>
-
+								<input type="text" class="form-control" id="postText" name="postText" placeholder="Enter your petition text"
+								 required>
 								<small id="postTextHelp" class="form-text text-muted"></small>
 								<div class="valid-feedback">
 									Text provided is valid!
@@ -581,41 +501,22 @@
 									Please provide a valid text!
 								</div>
 							</div>
+							<button type="button" class="btn btn-secondary">Social<br>buttons</button>
 
-							<!-- INI File Load -->
-							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="customFile">
-								<label class="custom-file-label" for="customFile">Illustrate your petition with a JPG or PNG file</label>
-							</div>
-							<!-- END File Load -->
+							<button type="button" class="btn btn-danger">Archive<br>Delete</button>
 
-							<hr class="light">
+							<button type="submit" class="btn btn-primary">Create<br> Petition</button>
 
-							<!-- INI Buttons Area -->
-							<div class="container d-flex justify-content-between">
+							<button type="button" class="btn btn-secondary">Toggle <br> Comments</button>
 
-								<!-- INI Posts/comments Toggle Button -->
-								<button type="button" class="btn btn-secondary" data-toggle="button" aria-pressed="false">Toggle Comments</button>
-								<!-- END Posts/comments Toggle Button -->
 
-								<!-- INI ADDTHIS.Com Social Button -->
-								<button type="button" class="btn btn-secondary">Social buttons</button>
-								<!-- END ADDTHIS.Com Social Button -->
 
-								<button type="button" class="btn btn-danger">Archive Delete</button>
-
-								<button type="submit" class="btn btn-primary">Create Petition</button>
-							</div>
-							<!-- END Buttons Area -->
-
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 			<!-- END MAIN PETITION CREATION FORM SECTION -->
-
-
-
 			<!-- MAIN MEET THE TEAM SECTION -->
 
 			<div class="container">

@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="user")
  *
  */
+
 class User extends BaseUser
 {
   /**

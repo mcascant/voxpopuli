@@ -19,7 +19,7 @@ class PostFormType extends AbstractType
         $builder->add('title', TextType::class, array(
             'invalid_message' => 'Please provide a valid Title'
         ))
-            ->add( 'text', TextType::class, array(
+            ->add('text', TextType::class, array(
                 'invalid_message' => 'Please provide a valid Text'
             ))
             ->add('tagList', TextType::class, array(

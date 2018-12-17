@@ -9,6 +9,7 @@ use App\Entity\User;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
  */
+
 class Post
 {
 

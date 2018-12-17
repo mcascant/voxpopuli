@@ -8,12 +8,12 @@
 
             <ul class="navbar-nav ml-auto">
                 {% include 'nav/mainLinks.html.twig' %}
-
+				{% if app.user %}
+            	<a href="/logout">Logout</a>
+            	{% else %}
                 {% include 'forms/registerForm.html.twig' %}
-
                 {% include 'forms/loginForm.html.twig' %}
-
-                {% include 'forms/pwdChangeForm.html.twig' %}
+				{% endif %}
             </ul>
         </div>
     </div>

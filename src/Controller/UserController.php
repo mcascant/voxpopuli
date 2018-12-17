@@ -31,10 +31,10 @@ class UserController extends AbstractController
     ) {
         $user = new User();
         $form = $this->createForm(UserFormType::class, $user);
-        
         $form->submit($request->request->all());
         
         if ($form->isValid()) {
+            
             $event = new FormEvent($form, $request);
             $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
             
@@ -49,10 +49,10 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
             
-            return new Response('', 201);
+            return new Response('Yes', 201);
         }
         
-        return new JsonResponse('', 400);
+        return new JsonResponse('No', 400);
     }
     
     /**

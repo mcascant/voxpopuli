@@ -15,6 +15,10 @@ class DefaultController
     {
         $this->twig = $twig;
     }
+    
+    
+    
+    
 
     /**
      * Homepage
@@ -30,6 +34,8 @@ class DefaultController
             $this->twig->render('homepage.html.twig')
         );
     }
+    
+    
 }
 
 

@@ -22,17 +22,17 @@ class PostFormType extends AbstractType
             ->add( 'text', TextType::class, array(
                 'invalid_message' => 'Please provide a valid Text'
             ))
-            ->add('userId', IntegerType::class, array(
-                'invalid_message' => 'Please provide a valid User Id'
-            ))
             ->add('tagList', TextType::class, array(
                 'invalid_message' => 'Please provide a valid Title'
             ))
             ->add('minimumVotes', TextType::class, array(
-                'invalid_message' => 'Please provide a valid Title'
+                'invalid_message' => 'Please provide the minimum votes required'
             ))
             ->add('pubDate', IntegerType::class, array(
                 'invalid_message' => 'Please provide a valid Publication Date',
+                'empty_data' => '1'
+            ))
+            ->add('creator', IntegerType::class, array(
                 'empty_data' => '1'
             ));
 

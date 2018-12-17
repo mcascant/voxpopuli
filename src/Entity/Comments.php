@@ -34,7 +34,7 @@ class Comments
     private $postId;
     
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\User", mappedBy="user.id")
      */
     private $userId;
 

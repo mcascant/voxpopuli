@@ -4,7 +4,7 @@
         Sign Up
     </a>
     <div class="dropdown-menu" aria-labelledby="signUpDropdown">
-        <form class="px-3 py-3 needs-validation" style="min-width: 250px;" novalidate oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
+        <form action="/register"  method="post" class="px-3 py-3 needs-validation" style="min-width: 250px;" novalidate oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
             <div class="form-group">
                 <label for="signUpUsername">Username</label>
                 <input type="text" class="form-control" id="signUpUsername" name="username" placeholder="Pick a username"

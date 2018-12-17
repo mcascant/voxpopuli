@@ -11,6 +11,7 @@ use App\Entity\User;
  */
 class Post
 {
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -36,16 +37,17 @@ class Post
     /**
      * @ORM\Column(type="integer")
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
     private $creator;
     
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="posts")
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="post_id")
      * @ORM\JoinTable(name="vote")
      */
     private $voters;
-    
+
+
     public function __construct()
     {
         $this->voters = new ArrayCollection();
@@ -104,16 +106,16 @@ class Post
 
     public function getCreator(): ?int
     {
-        return $this->userId;
+        return $this->creator;
     }
 
-    public function setCreator(int $userId): self
+    public function setCreator(int $creator): self
     {
-        $this->userId = $userId;
+        $this->creator = $creator;
 
         return $this;
     }
-    
+
     /**
      * @return mixed
      */

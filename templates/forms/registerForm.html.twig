@@ -1,10 +1,14 @@
 <li class="nav-item dropdown">
+    
     <a class="nav-link dropdown-toggle" href="#" id="signUpDropdown" role="button" data-toggle="dropdown"
-       aria-haspopup="true" aria-expanded="false">
-        Sign Up
+       aria-haspopup="true" aria-expanded="false" data-hint="This is a tooltip!" data-hintposition="top-middle" data-position="bottom-right-aligned">
+        Register
     </a>
+    
     <div class="dropdown-menu" aria-labelledby="signUpDropdown">
+        
         <form class="px-3 py-3 needs-validation" style="min-width: 250px;" novalidate oninput='password2.setCustomValidity(password2.value != password.value ? "Passwords do not match." : "")'>
+            
             <div class="form-group">
                 <label for="signUpUsername">Username</label>
                 <input type="text" class="form-control" id="signUpUsername" name="username" placeholder="Pick a username"
@@ -17,6 +21,7 @@
                     Please provide a valid username (min. 6 characters)!
                 </div>
             </div>
+            
             <div class="form-group">
                 <label for="signUpEmail">Email address</label>
                 <input type="email" class="form-control" id="signUpEmail" name="email" placeholder="youremail@example.com"
@@ -29,6 +34,7 @@
                     Please provide a valid email!
                 </div>
             </div>
+            
             <div class="form-group">
                 <label for="signUpPassword">Password</label>
                 <input type="password" class="form-control" id="signUpPassword" name="password" placeholder="Password"
@@ -41,6 +47,7 @@
                     Please provide a valid password (min. 6 characters)!
                 </div>
             </div>
+            
             <div class="form-group">
                 <label for="signUpPassword2">Confirm Password</label>
                 <input type="password" class="form-control" id="signUpPassword2" name="password2" placeholder="Confirm Password"
@@ -53,12 +60,18 @@
                     Please confirm your password (min. 6 characters) and ensure it matches!
                 </div>
             </div>
+            
+            
+            <!-- JC COMMENT: DISABLING THE REMEMBER ME CHECKBOX AS NOT YET USED -->
+            <!--
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="dropdownCheck">
                 <label class="form-check-label" for="dropdownCheck">
                     Remember me
                 </label>
             </div>
+            -->
+            
             <div class="form-group">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -73,7 +86,9 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">Sign Up</button>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        
         </form>
     </div>
 </li>

@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
-use Doctrine\DBAL\Types\TextType;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use App\Entity\Post;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommentsRepository")
@@ -48,12 +50,12 @@ class Comments
         return $this->title;
     }
     
-    public function getBody(): ?text
+    public function getBody(): ?string
     {
         return $this->body;
     }
     
-    public function getPostId(): ?Post
+    public function getPostId()
     {
         return $this->postId;
     }

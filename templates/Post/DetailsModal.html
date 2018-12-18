@@ -23,7 +23,7 @@
                     </div>
 
                     <div class="modalPetitionViewButtons counterInfo">
-                        <button type="button" class="btn btn-primary btn-warning btn-sm"> ${post.voters} /  ${post.minimumVotes}</button>
+                        <button type="button" class="btn btn-primary btn-warning btn-sm" onclick="voteCall(${post.id})"> 0 /  ${post.minimumVotes}</button>
                     </div>
 
                 </div>
@@ -34,6 +34,9 @@
                 <div class=petitionText_petitionImgContainer>
                     ${post.text}
                     <img src="https://picsum.photos/200/?random" alt="petitionImg">
+
+                    <div id="commentList"></div>
+
                 </div>
             </div>
 

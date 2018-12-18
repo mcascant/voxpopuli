@@ -3,49 +3,31 @@
 namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
-use App\Form\PostFormType;
+use App\Entity\Vote;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 
 
-class VoteController extends Controller
+class VoteController extends AbstractController
 {
 
    
     /**
-     * @Route("/vote/create/{post}", name="create_vote")
+     * @Route("/vote/create/{postId}", name="create_vote")
      */
-    public function createVote(Request $request, Post $post)
+    public function createVote(int $postId, Security $security)
     {
-        if ($post->getVoters()->contains($this->getUser())) {
-            return new JsonResponse(
-                [
-                    'error' => [
-                        'messages' => [
-                            'You have already voted, you can only vote once'
-                        ]
-                    ]
-                ],
-                403
-            );
-        }
-
-        $post->addVoter($this->getUser());
-        $manager = $this->getDoctrine()->getManager();
-        $manager->persist($post);
-        $manager->flush();
-        
-        return new JsonResponse(
-            [
-                'data' => ['Vote added']
-            ]
-        );
-    
+        $user = $security->getToken()->getUser('id');
+        var_dump($user);
+        $vote = new Vote();
+        $vote->addUserId($user);
+        $vote->addPostId($postId);
     }
 }

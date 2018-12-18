@@ -7,6 +7,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav ml-auto">
+                {% if app.user%}
+                    {{app.user.username}}
+                {% endif %}
                 {% include 'nav/mainLinks.html.twig' %}
 				{% if app.user %}
             	<a href="/logout">Logout</a>

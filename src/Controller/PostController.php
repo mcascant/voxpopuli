@@ -7,7 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Form\PostFormType;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
@@ -48,13 +50,15 @@ class PostController extends AbstractController
     /**
      * @Route("/post/create", name="create_post")
      */
-    public function createPost(Request $request)
+    public function createPost(Security $security, Request $request)
     {
         $post = new Post();
-        $form = $this->createForm(PostFormType::class, $post, ['standalone' => true]);
+        $form = $this->createForm(PostFormType::class, $post, [
+            'standalone' => true,
+            'user' => $security->getUser()->getUsername()
+        ]);
 
         $form->submit($request->request->all()); // Trying with handlerRequest and form was not submitted!!! LEARN
-
         if ($form->isValid())
         {
             $manager = $this->getDoctrine()->getManager();

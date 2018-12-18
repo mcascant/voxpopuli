@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Post;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -14,8 +15,13 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class PostFormType extends AbstractType
 {
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        date_default_timezone_set('Australia/Melbourne');
+        $date = date('m/d/Y h:i:s a', time());
+        $username = $options['user'];
+
         $builder->add('title', TextType::class, array(
             'invalid_message' => 'Please provide a valid Title'
         ))
@@ -30,10 +36,10 @@ class PostFormType extends AbstractType
             ))
             ->add('pubDate', IntegerType::class, array(
                 'invalid_message' => 'Please provide a valid Publication Date',
-                'empty_data' => '1'
+                'empty_data' => $date
             ))
             ->add('creator', IntegerType::class, array(
-                'empty_data' => '1'
+                'empty_data' => $username
             ));
 
         if ($options['standalone']) {
@@ -46,7 +52,8 @@ class PostFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Post::class,
             'standalone' => false,
-            'csrf_protection' => false
+            'csrf_protection' => false,
+            'user' => User::class
         ]);
     }
 }

@@ -4,6 +4,10 @@
 
 <script>
 window.onload = function() {
+    postList();
+    commentsList();
+}
+function postList () {
     let xhttp = new XMLHttpRequest();
     let url = '/post/list';
     xhttp.onreadystatechange = function() {
@@ -42,6 +46,31 @@ window.onload = function() {
     xhttp.open("GET", url, true);
     xhttp.send();
 }
+
+function commentsList() {
+    console.log('STEP --> comments')
+    let xhttp = new XMLHttpRequest();
+    let url = '/comments/list';
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+            rsp = JSON.parse(this.responseText).comments
+            html = ''
+            rsp.forEach(r => {
+                html += `
+                <ul>
+                    <li>${r.title}</li>
+                </ul>
+                `
+            })
+            document.querySelector('#commentList').innerHTML = html;
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+</script>
+
+
 </script>
 
 <style>

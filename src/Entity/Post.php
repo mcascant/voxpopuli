@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use App\Entity\User;
@@ -41,17 +42,11 @@ class Post
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
     private $creator;
-    
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="post_id")
-     * @ORM\JoinTable(name="vote")
-     */
-    private $voters;
-
 
     public function __construct()
     {
         $this->voters = new ArrayCollection();
+        $this->votes = new ArrayCollection();
     }
 
     /**
@@ -63,6 +58,11 @@ class Post
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $tagList;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Vote", mappedBy="post_id")
+     */
+    private $votes;
 
     public function getId(): ?int
     {
@@ -114,37 +114,6 @@ class Post
     {
         $this->creator = $creator;
 
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVoters()
-    {
-        return $this->voters;
-    }
-
-    /**
-     * @param mixed $voters
-     */
-    public function addVoter(User $voter)
-    {
-        if (!$this->voters->contains($voter)) {
-            $this->voters->add($voter);
-        }
-        
-        return $this;
-    }
-    /**
-     * @param mixed $voters
-     */
-    public function removeVoter(User $voter)
-    {
-        if ($this->voters->contains($voter)) {
-            $this->voters->remove($voter);
-        }
-        
         return $this;
     }
 

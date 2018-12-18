@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -25,10 +26,16 @@ class User extends BaseUser
      * @ORM\ManyToMany(targetEntity="App\Entity\Post", mappedBy="voters")
      */
     private $posts;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Vote", mappedBy="user_id")
+     */
+    private $votes;
     
     public function __construct()
     {
         $this->posts = new ArrayCollection();
+        $this->votes = new ArrayCollection();
     }
 
     /**
@@ -60,6 +67,34 @@ class User extends BaseUser
     public function getId(): ?string
     {
        return $this->id;
+    }
+
+    /**
+     * @return Collection|Vote[]
+     */
+    public function getVotes(): Collection
+    {
+        return $this->votes;
+    }
+
+    public function addVote(Vote $vote): self
+    {
+        if (!$this->votes->contains($vote)) {
+            $this->votes[] = $vote;
+            $vote->addUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeVote(Vote $vote): self
+    {
+        if ($this->votes->contains($vote)) {
+            $this->votes->removeElement($vote);
+            $vote->removeUserId($this);
+        }
+
+        return $this;
     }
     
 }

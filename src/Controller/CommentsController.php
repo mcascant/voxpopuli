@@ -6,7 +6,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\Entity\Post;
 use App\Entity\Comments;
 use App\Form\PostFormType;
 use Symfony\Component\Serializer\Serializer;
@@ -36,10 +35,10 @@ class CommentsController extends Controller
         $repository = $manager->getRepository(Comments::class);
         $pattern = $request->query->get('pattern');
 
-        $posts = $repository->findAllByField($pattern);
+        $comments = $repository->findAllByField($pattern);
 
         $response = $this->json(
-            ['data' => $posts],
+            ['data' => $comments],
             200
         );
 

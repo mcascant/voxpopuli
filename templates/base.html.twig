@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>
+        
             {% block title %}
-                Vox Populis
+            
+            	Vox Populi
             {% endblock %}
         </title>
 
         {% block stylesheets %}
+        <!-- JC COMMENT: ADDING THE BOOTSTRAP/FONTAWESOME/INTROJS CDN CSS -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.css" rel="stylesheet">
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css" rel="stylesheet">
+            
+            <!-- JC COMMENT: I STILL NEED TO MODIFY LOCAL STYLE CSS -->
             <link href="/css/style.css" rel="stylesheet">
         {% endblock %}
     </head>
@@ -21,7 +31,7 @@
         {% endblock %}
 
         {% block javascripts %}
-            <!-- SCRIPTS SECTION -->
+            <!-- JC COMMENT: BOOTSTRAP/JQUERY/COOKIEBAR/INTROJS CDN SCRIPTS -->
             <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -30,14 +40,21 @@
                     crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
                     crossorigin="anonymous"></script>
-
-            <!-- BOOSTRAP FORM VALIDATION SCRIPT CALL SECTION -->
-            <script type="text/javascript" src="/js/script.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=white&always=1"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js"></script>
+           
+            <!-- JC COMMENT: BOOSTRAP FORM VALIDATION LOCAL SCRIPT CALL -->
+            <script src="/js/script.js"></script>
         {% endblock %}
         
+<<<<<<< HEAD
             <!-- ADDTHIS SCRIPT -->
             <!-- Go to www.addthis.com/dashboard to customize your tools -->
             <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c0a90b030710d46"></script>
+=======
+            
+>>>>>>> a451bb2a39717a49c0cd3dfbf1887cf011652299
 
 
     </body>

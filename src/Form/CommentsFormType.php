@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Post;
+
 use App\Entity\Comments;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;

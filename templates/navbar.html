@@ -19,10 +19,10 @@
                 {% endif %}
                 {% include 'nav/mainLinks.html.twig' %}
 				{% if app.user %}
+                {% include 'nav/help.html.twig' %}
             	<a href="/logout">Logout</a>
             	{% else %}
                 
-                {% include 'nav/help.html.twig' %}
                 
                 {% include 'nav/projectInformation.html.twig' %}
                 

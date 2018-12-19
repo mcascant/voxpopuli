@@ -51,9 +51,6 @@ class UserController extends AbstractController
             
             return $this->redirectToRoute('homepage');
             return new Response('Yes', 201);
-            echo "<div class='alert alert-succes' role='alert'>
-  <strong>Well done!</strong> You successfully read this important alert message.
-</div>";
         }
         
         return new JsonResponse('No', 400);

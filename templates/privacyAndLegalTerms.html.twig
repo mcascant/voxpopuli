@@ -1,6 +1,18 @@
 {% extends "base.html.twig" %}
 
+
 {%  block body %}
+
+
+<!-- HEADER AND NAVIGATION SECTION -->
+
+	<header>
+		<!-- ADDING THE BOOTSTRAP NAVBAR WITH DROPDOWN FORMS FOR REGISTER & LOGIN-->
+        {% include "navbar.html.twig" %}
+	</header>
+
+	
+
 <!--- PRIVACY STUFF -->
 <div class="container">
 	<h1>Privacy Policy & Terms of Use as of 15/12/2018.</h1>
@@ -795,4 +807,8 @@
 	<h2>Thank you for visiting!</h2>
 </div>
 
+<!-- FOOTER SECTION -->
+	{% include 'footer.html.twig' %}
+
 {%  endblock body %}
+

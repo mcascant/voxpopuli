@@ -52,8 +52,8 @@ class PostFormType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Post::class,
             'standalone' => false,
-            'csrf_protection' => false,
-            'user' => User::class
+            'user' => User::class,
+            'csrf_protection' => false
         ]);
     }
 }

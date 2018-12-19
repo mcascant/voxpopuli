@@ -12,7 +12,7 @@
                 {% endif %}
                 {% include 'nav/mainLinks.html.twig' %}
 				{% if app.user %}
-            	<a href="/logout">Logout</a>
+            	<li><a href="/logout">Logout</a></li>
             	{% else %}
                 {% include 'forms/registerForm.html.twig' %}
                 {% include 'forms/loginForm.html.twig' %}

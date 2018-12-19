@@ -7,7 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use App\Entity\Post;
-use App\Entity\User;
 use App\Form\PostFormType;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Serializer\Serializer;
@@ -57,10 +56,11 @@ class PostController extends AbstractController
             'standalone' => true,
             'user' => $security->getUser()->getUsername()
         ]);
-
+        //var_dump($form);
         $form->submit($request->request->all()); // Trying with handlerRequest and form was not submitted!!! LEARN
         if ($form->isValid())
-        {
+        {    
+           
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($post);
             $manager->flush();

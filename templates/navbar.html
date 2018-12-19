@@ -1,11 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="#">
+    <!-- JC COMMENT: I ADDED THE DATA-HINT/DATA-HINTPOSITION/DATA-POSITION TO DISPLAY ON HINTS CALL -->
+        <a class="navbar-brand" href="#home" data-hint="This is a tooltip!" data-hintposition="top-left" data-position="bottom-right-aligned">
             <img src="img/voxpopuli.jpg" alt="vox populi">
         </a>
+        <!-- JC COMMENT: I ADDED MENU TOGGLE BUTTON THAT WAS MISSING -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+		<!-- JC COMMENT: I ADDED DROP-DOWN MENU HELP AND DISABLED THROUGH COMMENT THE FORGOT/CHANGE PASSWORD ONES -->
             <ul class="navbar-nav ml-auto">
                 {% if app.user%}
                     {{app.user.username}}
@@ -14,6 +21,11 @@
 				{% if app.user %}
             	<a href="/logout">Logout</a>
             	{% else %}
+                
+                {% include 'nav/help.html.twig' %}
+                
+                {% include 'nav/projectInformation.html.twig' %}
+                
                 {% include 'forms/registerForm.html.twig' %}
                 {% include 'forms/loginForm.html.twig' %}
 				{% endif %}

@@ -37,7 +37,7 @@ class Post
     private $pubDate;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
@@ -93,24 +93,24 @@ class Post
         return $this;
     }
 
-    public function getPubDate(): ?int
+    public function getPubDate()
     {
         return $this->pubDate;
     }
 
-    public function setPubDate(int $pubDate): self
+    public function setPubDate($pubDate)
     {
         $this->pubDate = $pubDate;
 
         return $this;
     }
 
-    public function getCreator(): ?int
+    public function getCreator()
     {
         return $this->creator;
     }
 
-    public function setCreator(int $creator): self
+    public function setCreator($creator)
     {
         $this->creator = $creator;
 

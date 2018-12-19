@@ -34,11 +34,11 @@ class PostFormType extends AbstractType
             ->add('minimumVotes', TextType::class, array(
                 'invalid_message' => 'Please provide the minimum votes required'
             ))
-            ->add('pubDate', IntegerType::class, array(
+            ->add('pubDate', TextType::class, array(
                 'invalid_message' => 'Please provide a valid Publication Date',
                 'empty_data' => $date
             ))
-            ->add('creator', IntegerType::class, array(
+            ->add('creator', TextType::class, array(
                 'empty_data' => $username
             ));
 

@@ -49,6 +49,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
             
+            return $this->redirectToRoute('homepage');
             return new Response('Yes', 201);
         }
         
@@ -114,6 +115,7 @@ class UserController extends AbstractController
         
         $this->get('session')->set('_security_main', serialize($token));
         
+        return $this->redirectToRoute('homepage');
         return $this->json(
             [
                 "email" => $email,
